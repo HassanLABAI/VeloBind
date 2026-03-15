@@ -1,0 +1,23 @@
+Feature Group,Mean |SHAP|
+"ESM-35M last layer
+(protein PLM)",0.0011829312207943074
+"SeqFeat
+(CTD+Conjoint+QSO+AAIndex)",0.0008615225814717127
+"ECFP4
+(local topology)",7.77000983684677e-05
+"ECFP2
+(ultra-local)",3.495095308478899e-05
+"ECFP6
+(wider radius)",8.12920630364397e-05
+"FCFP
+(functional class)",8.402889909469422e-05
+"E-state
+(electrotopological)",0.0007719158018950031
+"MACCS
+(pharmacophore keys)",0.0003124195000917908
+"AtomPair
+(global topology)",9.027442683160403e-05
+"Torsion
+(rotatable bonds)",4.317452575142669e-05
+"RDKit
+(physicochemical)",0.0035546042305073552

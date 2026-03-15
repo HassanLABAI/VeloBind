@@ -1,0 +1,10 @@
+output/models/
+data/raw/
+MISC/
+data/processed/X_train.npz
+data/processed/X_test.npz
+data/processed/X_casf13.npz
+__pycache__/
+*.pyc
+.env
+data/external/

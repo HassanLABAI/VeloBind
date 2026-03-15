@@ -1,0 +1,10 @@
+,Training,CASF-2016,CASF-2013
+N,18748,285,195
+pKd mean,6.36,6.49,6.30
+pKd SD,1.85,2.17,2.25
+pKd min,0.40,2.07,2.07
+pKd max,15.22,11.82,11.52
+Median seq len (AA),293,262,272
+Mean seq len (AA),381,305,349
+Max seq len (AA),4735,1016,1016
+% truncated,3.3%,0.0%,0.0%

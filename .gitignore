@@ -1,10 +1,13 @@
 output/models/
+output/preprocessors/
 data/raw/
-MISC/
 data/processed/X_train.npz
 data/processed/X_test.npz
 data/processed/X_casf13.npz
+src/src/
+data/external/
+~$*
+*.docx
 __pycache__/
 *.pyc
 .env
-data/external/

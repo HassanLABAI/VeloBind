@@ -3,8 +3,8 @@
 > **Structure-free protein–ligand binding affinity prediction**  
 > Sequence + SMILES only · No 3D co-crystal structure required · Primary screening scale
 
-[![Hugging Face Spaces](https://img.shields.io/badge/🤗%20HF%20Spaces-VeloBind-blue)](https://huggingface.co/spaces/YOUR-USERNAME/velobind)
-[![Zenodo](https://img.shields.io/badge/Zenodo-Data%20%26%20Models-blue)](https://doi.org/YOUR_ZENODO_DOI)
+[![Hugging Face Spaces](https://img.shields.io/badge/🤗%20HF%20Spaces-VeloBind-blue)](https://huggingface.co/spaces/ym59/velobind)
+[![Zenodo](https://img.shields.io/badge/Zenodo-Data%20%26%20Models-blue)](https://doi.org/10.5281/zenodo.19039903)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
@@ -116,7 +116,7 @@ python scripts/09_compute_ad.py
 
 A live inference app is available on Hugging Face Spaces:
 
-👉 **[huggingface.co/spaces/YOUR-USERNAME/velobind](https://huggingface.co/spaces/YOUR-USERNAME/velobind)**
+👉 **https://ym59-velobind.hf.space/**
 
 Three modes:
 - **Single query** — paste one sequence + one SMILES, get pKd + confidence interval + applicability domain badge
@@ -159,7 +159,7 @@ streamlit run app.py
 
 Pre-trained models, feature matrices, and predictions are available on Zenodo:
 
-📦 **[doi.org/YOUR_ZENODO_DOI](https://doi.org/YOUR_ZENODO_DOI)**
+📦 **https://doi.org/10.5281/zenodo.19039903**
 
 | Archive | Contents |
 |---|---|

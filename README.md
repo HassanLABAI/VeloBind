@@ -191,12 +191,11 @@ VeloBind uses a 10,054-dimensional feature vector per complex:
 
 ```bibtex
 @article{velobind2025,
-  title   = {VeloBind: Structure-free protein–ligand binding affinity prediction
-             via frozen protein language model embeddings and gradient-boosted ensembles},
-  author  = {YOUR NAME et al.},
-  journal = {Journal of Chemical Information and Modeling},
-  year    = {2025},
-  doi     = {YOUR_PAPER_DOI}
+  title   = {VeloBind: A structure-free protein-ligand binding affinity predictor intended for primary drug screening},
+  author  = {},
+  journal = {},
+  year    = {},
+  doi     = {}
 }
 ```
 

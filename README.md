@@ -13,7 +13,7 @@
 
 Virtually all high-performing binding affinity models require a solved 3D protein–ligand complex at inference, a bottleneck that precludes their use at the primary screening stage where millions of compounds must be evaluated before any structural data is available.
 
-**VeloBind** removes this bottleneck entirely. Given only a protein sequence and a ligand SMILES string, it predicts binding affinity (pKd) at ~0.35 seconds per query on CPU, achieving **Pearson R = 0.8469** on CASF-2016, competitive with 3D structure-based methods and state-of-the-art among all sequence-only models.
+**VeloBind** removes this bottleneck entirely. Given only a protein sequence and a ligand SMILES string, it predicts binding affinity (pKd) at ~0.35 seconds per query on CPU, achieving **Pearson R = 0.8485** on CASF-2016, competitive with 3D structure-based methods and state-of-the-art among all sequence-only models.
 
 ### Why frozen ESM-2 + gradient boosting?
 

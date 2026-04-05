@@ -190,7 +190,7 @@ VeloBind uses a 10,054-dimensional feature vector per complex:
 ## Citation
 
 ```bibtex
-@article{velobind2025,
+@article{velobind2026,
   title   = {VeloBind: A structure-free protein-ligand binding affinity predictor intended for primary drug screening},
   author  = {},
   journal = {},

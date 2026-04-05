@@ -153,7 +153,7 @@ def quick_train(X_tr, y_tr, X_te, seed=42):
 
 def main():
     print("=" * 65)
-    print("PRISM — Step 3: Training + Ablation (v5)")
+    print("VELOBIND — Step 3: Training + Ablation (v5)")
     print("=" * 65)
 
     tr, te  = load_npz()
@@ -344,8 +344,8 @@ def main():
     oof_meta = meta.predict(oof_mat)
     iso, pred_cal = fit_isotonic(oof_meta, y_train, pred_meta)
     m_cal = evaluate(pred_cal, y_test)
-    ablation_rows.append(("+ Isotonic calibration = PRISM", m_cal['R'], m_cal['RMSE']))
-    print_row("PRISM final", m_cal)
+    ablation_rows.append(("+ Isotonic calibration = VELOBIND", m_cal['R'], m_cal['RMSE']))
+    print_row("VELOBIND final", m_cal)
     joblib.dump(iso, model_dir / "isotonic.pkl")
 
     # ── Pick best of the three blending strategies ────────────────────
@@ -371,8 +371,8 @@ def main():
 
     # ── Scatter plot ──────────────────────────────────────────────────
     scatter_plot(y_test, best_preds, best_m,
-                 title="PRISM — CASF-2016",
-                 out_path=fig_dir / "prism_final_scatter.png")
+                 title="VELOBIND — CASF-2016",
+                 out_path=fig_dir / "velobind_final_scatter.png")
 
     print(f"\n✓ Done. Run 03b_save_predictions.py and 06_eval_both.py next.")
 

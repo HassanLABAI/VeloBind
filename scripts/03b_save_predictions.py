@@ -30,7 +30,7 @@ from src.evaluation.metrics import evaluate, print_row, print_comparison_table, 
 
 def main():
     print("=" * 60)
-    print("PRISM — Recovery + Prediction Optimisation (v5)")
+    print("VELOBIND — Recovery + Prediction Optimisation (v5)")
     print("=" * 60)
 
     # ── Load artefacts ────────────────────────────────────────────────
@@ -146,8 +146,8 @@ def main():
     fig_dir.mkdir(exist_ok=True)
     scatter_plot(
         y_test, best_preds, best_m,
-        title=f"PRISM — CASF-2016  [{best_name}]",
-        out_path=fig_dir / "prism_final_scatter.png"
+        title=f"VELOBIND — CASF-2016  [{best_name}]",
+        out_path=fig_dir / "velobind_final_scatter.png"
     )
 
     print(f"\nFinal result: R={best_m['R']:.4f}  RMSE={best_m['RMSE']:.4f}  "

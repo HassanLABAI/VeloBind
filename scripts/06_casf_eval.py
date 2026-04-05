@@ -116,7 +116,13 @@ def blend(test_mat, oof_mat, y_train, seeds):
     tt = np.column_stack([test_mat[:, lc].mean(1), test_mat[:, cc].mean(1), test_mat[:, xc].mean(1)])
     m_type = RidgeCV(alphas=np.logspace(-3, 3, 50), cv=5)
     m_type.fit(to, y_train)
+    from sklearn.isotonic import IsotonicRegression
+    iso = IsotonicRegression(out_of_bounds='clip')
+    oof_iso_input = m_type.predict(to)
+    iso.fit(oof_iso_input, y_train)
+    test_iso_input = m_type.predict(tt)
     res['meta_type'] = m_type.predict(tt)
+    res['meta_type_iso'] = iso.transform(test_iso_input)
     return res, m_all, m_type
 
 
@@ -167,7 +173,7 @@ def scatter_fig(y_true, y_pred, m, title, outname):
     print(f"    Saved: {outname}")
 
 
-def print_comparison_table(baselines, prism_m, benchmark_name, n):
+def print_comparison_table(baselines, velobind_m, benchmark_name, n):
     """Full comparison table with automatic rank computation."""
     W = 65
     print(f"\n\n{'═'*W}")
@@ -183,22 +189,22 @@ def print_comparison_table(baselines, prism_m, benchmark_name, n):
         print(f"  {name:<13} {inp:<8} {ci:>6.3f} {r:>7.3f} {mae:>7.3f} {rmse:>7.3f}  {above}")
 
     print(f"  {'─'*W}")
-    print(f"  {'PRISM (ours)':<13} {'1D seq':<8} {'—':>6} "
-          f"{prism_m['R']:>7.4f} {prism_m['MAE']:>7.4f} {prism_m['RMSE']:>7.4f}"
+    print(f"  {'VELOBIND (ours)':<13} {'1D seq':<8} {'—':>6} "
+          f"{velobind_m['R']:>7.4f} {velobind_m['MAE']:>7.4f} {velobind_m['RMSE']:>7.4f}"
           f"  ← NO STRUCTURE REQUIRED")
 
-    all_r    = sorted([x[3] for x in baselines] + [prism_m['R']], reverse=True)
-    rank     = all_r.index(prism_m['R']) + 1
+    all_r    = sorted([x[3] for x in baselines] + [velobind_m['R']], reverse=True)
+    rank     = all_r.index(velobind_m['R']) + 1
     n_total  = len(baselines) + 1
-    beaten   = [x[0] for x in baselines if x[3] <= prism_m['R']]
-    above    = [x[0] for x in baselines if x[3] >  prism_m['R']]
-    seq_beat = [x[0] for x in baselines if x[1] == "1D seq" and x[3] <= prism_m['R']]
-    d3_beat  = [x[0] for x in baselines if x[1] == "3D"     and x[3] <= prism_m['R']]
+    beaten   = [x[0] for x in baselines if x[3] <= velobind_m['R']]
+    above    = [x[0] for x in baselines if x[3] >  velobind_m['R']]
+    seq_beat = [x[0] for x in baselines if x[1] == "1D seq" and x[3] <= velobind_m['R']]
+    d3_beat  = [x[0] for x in baselines if x[1] == "3D"     and x[3] <= velobind_m['R']]
 
     print(f"\n  Rank by Pearson R:       #{rank} / {n_total}")
-    print(f"  Models above PRISM:      {above}  (all require 3D structure)")
+    print(f"  Models above VELOBIND:      {above}  (all require 3D structure)")
     print(f"  Models beaten overall:   {beaten}")
-    print(f"  1D-seq models beaten:    {seq_beat if seq_beat else '(PRISM is best 1D-seq)'}")
+    print(f"  1D-seq models beaten:    {seq_beat if seq_beat else '(VELOBIND is best 1D-seq)'}")
     print(f"  3D models beaten:        {d3_beat if d3_beat else 'None'}")
 
     return rank, n_total, beaten, seq_beat, d3_beat
@@ -257,7 +263,7 @@ def extract_casf13_features():
 
 def main():
     print("=" * 65)
-    print("PRISM — Step 6: Joint Evaluation (CASF-2016 + CASF-2013)")
+    print("VELOBIND — Step 6: Joint Evaluation (CASF-2016 + CASF-2013)")
     print("=" * 65)
 
     print("\n[Loading training artefacts]")
@@ -288,7 +294,7 @@ def main():
         'error': best16_preds - y_test16, 'abs_error': np.abs(best16_preds - y_test16),
     }).to_csv(config.OUTPUT_DIR / "predictions_casf16.csv", index=False)
     scatter_fig(y_test16, best16_preds, best16_m,
-                title=f"PRISM — CASF-2016  (N={best16_m['N']})",
+                title=f"VELOBIND — CASF-2016  (N={best16_m['N']})",
                 outname="eval_scatter_casf16.png")
 
     # ── CASF-2013 ─────────────────────────────────────────────────────
@@ -341,7 +347,7 @@ def main():
         'in_training': [p in overlap for p in ids13],
     }).to_csv(config.OUTPUT_DIR / "predictions_casf13.csv", index=False)
     scatter_fig(y_test13, best13_preds, best13_m,
-                title=f"PRISM — CASF-2013  (N={best13_m['N']})",
+                title=f"VELOBIND — CASF-2013  (N={best13_m['N']})",
                 outname="eval_scatter_casf13.png")
 
     # ── Full comparison tables ─────────────────────────────────────────
@@ -368,8 +374,8 @@ def main():
     Below: MMPD-DTA, CAPLA, PocketDTA, HPDAF — all require 3D structure.
 
   KEY ARGUMENT:
-    Every model ranked above PRISM on either benchmark requires a
-    co-crystal complex at inference. PRISM uses sequence + SMILES only.
+    Every model ranked above VELOBIND on either benchmark requires a
+    co-crystal complex at inference. VELOBIND uses sequence + SMILES only.
     This is the deployment gap it addresses.
 """)
     print(f"✓ Done.")

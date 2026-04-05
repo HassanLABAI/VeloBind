@@ -46,7 +46,7 @@ from src.features.interaction import build_interaction_features, save_pcas
 
 def main():
     print("=" * 60)
-    print("PRISM — Step 2: Feature Extraction v4")
+    print("VELOBIND — Step 2: Feature Extraction v4")
     print("=" * 60)
 
     train_df = pd.read_csv(config.DATA_DIR / "train_clean.csv")

@@ -638,7 +638,7 @@ with tab1:
                     with mc2:
                         metric_card("95% model interval", f"[{ci_lo:.2f}, {ci_hi:.2f}]")
                     with mc3:
-                        metric_card("Estimated Ki", pkd_to_ki(pkd))
+                        metric_card("Binding Affinity (nM)", pkd_to_ki(pkd))
                     with mc4:
                         ad_badge(in_domain, ad_dist)
 

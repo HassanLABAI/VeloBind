@@ -15,7 +15,7 @@ from src.data.leakage import check_leakage
 
 def main():
     print("=" * 55)
-    print("PRISM — Step 1: Data Check")
+    print("VELOBIND — Step 1: Data Check")
     print("=" * 55)
 
     # ── Path checks ──

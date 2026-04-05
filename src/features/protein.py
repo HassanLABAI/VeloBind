@@ -1,6 +1,6 @@
 # src/features/protein.py
 #
-# Protein feature extraction for PRISM
+# Protein feature extraction for VELOBIND
 #
 # ESM BLOCKS:
 #   mean_pool   [3 x 480d = 1440d]  per-layer mean of residue hidden states

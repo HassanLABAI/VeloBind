@@ -38,7 +38,7 @@ COMPETITORS = [
 ]
 
 
-def print_comparison_table(prism_m: dict, n_test: int):
+def print_comparison_table(velobind_m: dict, n_test: int):
     print("\n" + "=" * 72)
     print(f"CASF-2016 COMPARISON  (N={n_test})")
     print("=" * 72)
@@ -47,8 +47,8 @@ def print_comparison_table(prism_m: dict, n_test: int):
     for name, r, rmse, mae, inp in COMPETITORS:
         print(f"  {name:<22}  {inp:<12}  {r:>7.3f}  {rmse:>7.3f}  {mae:>7.3f}")
     print("  " + "-" * 60)
-    print(f"  {'PRISM (ours)':<22}  {'1D seq':<12}  "
-          f"{prism_m['R']:>7.4f}  {prism_m['RMSE']:>7.4f}  {prism_m['MAE']:>7.4f}")
+    print(f"  {'VELOBIND (ours)':<22}  {'1D seq':<12}  "
+          f"{velobind_m['R']:>7.4f}  {velobind_m['RMSE']:>7.4f}  {velobind_m['MAE']:>7.4f}")
     print("=" * 72)
 
 

@@ -41,7 +41,7 @@ This follows Grinsztajn et al. (NeurIPS 2022) showing GBMs match or exceed fine-
 | CAPLA | 3D | 0.797 | 0.786 | 1.054 | 1.362 |
 | PocketDTA | 3D | 0.805 | 0.806 | 0.861 | 1.105 |
 | HPDAF | 3D | 0.831 | 0.849 | 0.766 | 0.991 |
-| **VeloBind** | **1D seq** | **0.827** | **0.8469** | **0.928** | **1.202** |
+| **VeloBind** | **1D seq** | **0.828** | **0.8485** | **0.9240** | **1.1977** |
 
 ### CASF-2013 (zero-shot)
 
@@ -114,7 +114,7 @@ python scripts/09_compute_ad.py
 
 ## Web App
 
-A live inference app is available on Hugging Face Spaces:
+A live demonstration app is available on Hugging Face Spaces:
 
 👉 **https://ym59-velobind.hf.space/**
 

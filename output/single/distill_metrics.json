@@ -1,0 +1,36 @@
+{
+  "rows": [
+    {
+      "alpha": 0.0,
+      "tag": "pure distill",
+      "CASF16_R": 0.8081,
+      "CASF13_R": 0.746,
+      "OOF_R": 0.8113
+    },
+    {
+      "alpha": 0.25,
+      "tag": "blend",
+      "CASF16_R": 0.8234,
+      "CASF13_R": 0.7751,
+      "OOF_R": 0.8126
+    },
+    {
+      "alpha": 0.5,
+      "tag": "blend",
+      "CASF16_R": 0.8251,
+      "CASF13_R": 0.7822,
+      "OOF_R": 0.8085
+    },
+    {
+      "alpha": 1.0,
+      "tag": "plain single",
+      "CASF16_R": 0.8337,
+      "CASF13_R": 0.8048,
+      "OOF_R": 0.7874
+    }
+  ],
+  "best_alpha": 0.25,
+  "best_CASF16_R": 0.8234,
+  "ensemble_CASF16_R": 0.8465,
+  "plain_single_CASF16_R": 0.8336
+}

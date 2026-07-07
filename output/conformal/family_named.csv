@@ -1,0 +1,14 @@
+class,CASF16_n,CASF16_R,train_n,coverage90
+kinase,73,0.864,1895,0.898
+protease,65,0.877,1640,0.895
+hydrolase,41,0.852,1144,0.915
+transferase,20,0.904,964,0.885
+other,19,0.747,968,0.903
+transport/binding,19,0.825,719,0.897
+nuclear receptor,17,0.813,181,0.89
+immune/signaling,13,0.716,707,0.912
+lyase,10,0.762,390,0.89
+ligase,8,0.775,244,0.893
+isomerase,,,147,0.891
+oxidoreductase,,,303,0.901
+GPCR,,,55,0.873

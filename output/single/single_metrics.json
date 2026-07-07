@@ -1,0 +1,8 @@
+{
+  "CASF16_R": 0.8336,
+  "CASF16_RMSE": 1.2432,
+  "CASF13_R": 0.8048,
+  "CASF13_RMSE": 1.3839,
+  "OOF_R": 0.8004,
+  "conformal_cov90": 0.902
+}

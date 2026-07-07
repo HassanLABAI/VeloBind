@@ -1,0 +1,37 @@
+{
+  "CASF16_scoring_power_R": 0.846,
+  "CASF16_ranking_power_Spearman": 0.8391,
+  "regression_calibration_error_rECE": 0.0089,
+  "calibration_curve": [
+    {
+      "target_coverage": 0.95,
+      "empirical": 0.953,
+      "gap": 0.003
+    },
+    {
+      "target_coverage": 0.9,
+      "empirical": 0.899,
+      "gap": 0.001
+    },
+    {
+      "target_coverage": 0.85,
+      "empirical": 0.844,
+      "gap": 0.006
+    },
+    {
+      "target_coverage": 0.8,
+      "empirical": 0.792,
+      "gap": 0.008
+    },
+    {
+      "target_coverage": 0.7,
+      "empirical": 0.683,
+      "gap": 0.017
+    },
+    {
+      "target_coverage": 0.6,
+      "empirical": 0.581,
+      "gap": 0.019
+    }
+  ]
+}

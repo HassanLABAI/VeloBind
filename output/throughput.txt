@@ -1,0 +1,5 @@
+VeloBind throughput (per-compound screening path; protein cached)
+  compounds scored : 4,988
+  wall time        : 54.30 s
+  rate             : 92 compounds/s  (3 per core, 28 cores)
+  => 1,000,000 compounds in ~181.4 min on this machine

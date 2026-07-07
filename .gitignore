@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+output/models/
+data/
+*.npz
+venv/
+.venv/
+*.egg-info/
+*.tar.gz
+BindingDB_All_202606_tsv/
+catboost_info/
+*.zip
+*.sh
+.ipynb_checkpoints/
